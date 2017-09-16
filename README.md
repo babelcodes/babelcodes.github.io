@@ -4,6 +4,15 @@ Tower of Programming Languages
 
 ## Setup
 
+### Jekyll
+
+Version 3.5.* bug!
+
+```
+gem uninstall jekyll
+gem install jekyll -v 3.4-5
+```
+
 * Broken Links checkers
   * http://www.brokenlinkcheck.com/broken-links.php
   * http://www.smartinsights.com/search-engine-optimisation-seo/link-building/site-link-checking-tools/
