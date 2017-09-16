@@ -36,6 +36,8 @@ features:
   PatternMatching: true
 ---
 
+## Table of content
+
 * TOC
 {:toc}
 

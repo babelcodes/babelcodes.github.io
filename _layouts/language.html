@@ -19,33 +19,31 @@ layout: default
 
 	<div class="row">
 		<div class="col-lg-12">
-			<h2 style="margin-bottom: 30px; margin-top: -10px;">{% include mark-status.html status=page.status %}</h2>
+			<div style="margin-bottom: 30px; margin-top: -10px;">
+				{% include mark-status.html status=page.status %}
+				&nbsp;&bull;&nbsp;<a href="#features">Features</a>
+				&nbsp;&bull;&nbsp;<a href="#blueprints">Blueprints</a>
+			</div>
 		</div>
 	</div>
 
 	<div class="row">
         <div class="col-lg-12">
 			{{ content }}
+		</div>
+	</div>
 
-			<h3>Features</h3>
-			<!-- ul class="list-unstyled status_list">
-				{% for feature in site.languageFeatures %}
-					{% assign featureSupport = page.features[feature] %}
-					<li>
-						<small class="status_item">{% include mark-language-feature.html feature=featureSupport %}</small>
-						<a href="/functional/{{feature}}">{{feature}}</a>
-					</li>
-				{% endfor %}
-			</ul -->
-			<ul class="list-unstyled status_list">
+	<a name="features"></a><p>&nbsp;</p>
+	<div class="row">
+		<div class="col-lg-12">
+			<h3>
+				Features
+				<a class="pull-right" href="#top" title="Go to the top"><span class="glyphicon glyphicon-triangle-top"></span></a>
+			</h3>
+			<ol>
 				{% for language in site.languages %}
-					{% capture count %}{{ count | plus: '1' }}{% endcapture %}
-					{% if language.language==page.iid %}
-					<li>
-						<span data-toggle="tooltip" data-placement="top" data-original-title="{{tooltip}}">
-							<a href="{{ language.url }}">{{ language.name }}</a>
-						</span>
-					</li>
+					{% if language.layout=='feature' and language.language contains page.iid %}
+					<li><a href="{{ language.url }}">{{ language.name }}</a></li>
 					{% endif %}
 				{% endfor %}
 			</ol>
@@ -53,5 +51,34 @@ layout: default
 		</div>
 	</div>
 
+	<a name="blueprints"></a><p>&nbsp;</p>
+	<div class="row">
+		<div class="col-lg-12">
+			<h3>
+				Blueprints
+				<a class="pull-right" href="#top" title="Go to the top"><span class="glyphicon glyphicon-triangle-top"></span></a>
+			</h3>
+			<ol>
+			{% for language in site.languages %}
+				{% if language.layout=='feature' and language.language contains page.iid and language.code.gist%}
+					<li><a href="#{{ language.iid }}">{{ language.name }}</a></li>
+				{% endif %}
+			{% endfor %}
+			</ol>
+
+
+			{% for language in site.languages %}
+				{% if language.layout=='feature' and language.language contains page.iid and language.code.gist %}
+					<a id="{{language.iid}}">&nbsp;</a>
+					<h2>
+						{{ language.name }}
+						<a class="pull-right" href="#top" title="Go to the top"><span class="glyphicon glyphicon-triangle-top"></span></a>
+						<a class="pull-right" href="{{language.url}}" title="Go to the feature"><span class="glyphicon glyphicon-triangle-right"></span></a>
+					</h2>
+					{% gist language.code.gist %}
+				{% endif %}
+			{% endfor %}
+		</div>
+	</div>
 
 </div>
