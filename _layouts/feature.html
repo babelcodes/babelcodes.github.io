@@ -23,7 +23,7 @@ layout: default
 							<!-- img src="/resources/images/kits/Swift/swift-hero_2x.png" width="30px" / -->
 							<i class="glyphicon glyphicon-subtitles"></i>
 							&nbsp;
-							Code Card
+							Blueprint
 						</a>
 					{% endif %}
 				</h1>
@@ -41,15 +41,15 @@ layout: default
 	{% if page.code %}
 		<a name="CodeCard">&nbsp;</a>
 		<h1>
-			Code Card
+			Blueprint
 			{% include playground-link.html iswift=page.code.iswift %}
 		</h1>
 		<p><em>
-			Code Card is a full code snippet including the whole material seen on this page - hopefully as the most coherent way as possible.
+			<b>Blueprint</b> is a full code snippet including the whole material seen on this page - hopefully as the most coherent way as possible.
 			As this snippet is embedded from 'gist' platform you need to have access to
 			<a href="http://gist.github.com" target="_blank">http://gist.github.com</a> to see it.
 		</em></p>
-		<p>See <a href="/CodeCards">the full list of available Code Cards</a>.</p>
+		<p>See <a href="/CodeCards">the full list of available Blueprint</a>.</p>
 
 		{% gist page.code.gist %}
 

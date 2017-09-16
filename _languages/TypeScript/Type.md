@@ -6,52 +6,125 @@ iid: Type
 status: DOING
 abstract: ""
 code:
-  gist: 7ab927e65e4d4e9ba90dc0fbb2b8eafb
-links__:
+  gist: d9d2a3325e50589004867c5bd23d68f6
+links:
  - link:
-    name: 'The Swift Programming Language, Functions and Closures'
-    url: https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/GuidedTour.html#//apple_ref/doc/uid/TP40014097-CH2-ID463
-    description: ' - Apple Developer'
+    name: 'TypeScriptLang.org | Basic Types'
+    url: https://www.typescriptlang.org/docs/handbook/basic-types.html
+    description: ''
     type: reference
 features:
- - Constant
- - Variable
- - Function
- - Tuple
- - Generics
+ - 'Loose typing' 
+ - 'Post-fix typing'
+ - 'Type aliasing'
+ - 'Type Union'
+ - 'Type Intersection'
+ - 'this type'
+ - 'Discriminated type'
 ---
 
 * TOC
 {:toc}
 
-See also [other languages supporting Type Safety and Type Inference](/languages)
+## Basic types
 
-## Type safety
+{% gist d9d2a3325e50589004867c5bd23d68f6 %}
 
-```
-var aString :String = "text"
-aString = 123 // Failed
-```
+## Loose typing
 
-As it is a type safe language, [Generics](/Generics) make it possible to write code in [Swift](/Swift) that is not specific to a type and 
-can be utilized for different types.
+Can be dynamic or static
 
-## Type inference
+## Post-fix typing
+
+For a variable:
 
 ```
-var aString = "text"
-aString = 123 // Failed, because aString infered as String
+let isDone :boolean = true; // ":boolean" is optional
 ```
 
-## Type Annotation
+Or a function:
 
 ```
-var aString :String // aString is annotated as a String
+function add(x: number, y: number): number {
+    return x + y;
+}
 ```
 
-## Type Alias
+## Aliasing 
+
+enum like:
 
 ```
-typealias AudioSample = UInt16
-var maxAmplitudeFound = AudioSample.min
+type Name = string;
+type NameResolver = () => string;
+type NameOrResolver = Name | NameResolver;
+function getName(n: NameOrResolver): Name {
+    if (typeof n === "string") {
+        return n;
+    }
+    else {
+        return n();
+    }
+}
 ```
+
+## Union
+
+Using `|`:
+
+```
+type Name = string;
+type NameResolver = () => string;
+type NameOrResolver = Name | NameResolver;
+function getName(n: NameOrResolver): Name {
+    if (typeof n === "string") {
+        return n;
+    }
+    else {
+        return n();
+    }
+}
+
+```
+
+## Intersection
+
+Using `&`:
+
+```
+function extend<T, U>(first: T, second: U): T & U {
+    let result = <T & U>{};
+    for (let id in first) {
+        (<any>result)[id] = (<any>first)[id];
+    }
+    for (let id in second) {
+        if (!result.hasOwnProperty(id)) {
+            (<any>result)[id] = (<any>second)[id];
+        }
+    }
+    return result;
+}
+
+class Person {
+    constructor(public name: string) { }
+}
+interface Loggable {
+    log(): void;
+}
+class ConsoleLogger implements Loggable {
+    log() {
+        // ...
+    }
+}
+var jim = extend(new Person("Jim"), new ConsoleLogger());
+var n = jim.name;
+jim.log();
+```
+
+## `this`
+
+TODO
+
+## Discriminated type
+
+TODO

@@ -41,4 +41,12 @@ features:
 * TOC
 {:toc}
 
-Hello TypeScript... SOON!
+> TypeScript is a free and open-source programming language developed and maintained by Microsoft. It is a strict syntactical 
+superset of JavaScript, and adds optional static typing to the language. Anders Hejlsberg, lead architect of C# and creator 
+of Delphi and Turbo Pascal, has worked on the development of TypeScript. TypeScript may be used to develop JavaScript 
+applications for client-side or server-side (Node.js) execution.
+> 
+> TypeScript is designed for development of large applications and __<u>compiles</u>__ to JavaScript. 
+__<u>As TypeScript is a superset of JavaScript, existing JavaScript programs are also valid TypeScript programs</u>__.
+
+-- [wikipedia](https://en.wikipedia.org/wiki/TypeScript)
