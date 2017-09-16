@@ -3,7 +3,7 @@ layout: language
 type: language
 name: 'JavaScript'
 iid: js
-status: DOING
+status:
 abstract: ""
 links_:
  - link:

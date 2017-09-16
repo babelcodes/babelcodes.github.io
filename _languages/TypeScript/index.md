@@ -3,10 +3,9 @@ layout: language
 type: language
 iid: typescript 
 name: 'TypeScript'
-
 status: DOING
-since: iOS8
 icon: /resources/images/languages/TypeScript/typescript.png
+
 kits:
  - InteractivePlaygrounds
  - REPL

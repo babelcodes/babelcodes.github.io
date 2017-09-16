@@ -31,6 +31,7 @@ layout: default-headed
             <thead>
             <tr>
                 <th>#</th>
+                <th></th>
                 <th>Name</th>
                 {% for feature in site.languageFeatures %}
                     {% for functional in site.functional %}
@@ -52,6 +53,9 @@ layout: default-headed
                     {% capture count %}{{ count | plus: '1' }}{% endcapture %}
                     <tr>
                         <th>{{ count }}</th>
+                        <td>
+                            {% include mark-status.html status=language.status %}
+                        </td>
                         <td><big><a href="{{language.url}}" style="color: #df691a; text-decoration: none;">{{ language.name }}</a></big></td>
                         {% for f in site.languageFeatures %}
                             {% assign feature = language.features[f] %}

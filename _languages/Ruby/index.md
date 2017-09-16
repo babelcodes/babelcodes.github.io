@@ -3,7 +3,7 @@ layout: language
 type: language
 name: 'Ruby'
 iid: ruby
-status: DOING
+status:
 abstract: ""
 links_:
  - link:

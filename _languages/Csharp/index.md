@@ -3,7 +3,7 @@ layout: language
 type: language
 name: 'C#'
 iid: c#
-status: DOING
+status:
 abstract: ""
 links_:
  - link:

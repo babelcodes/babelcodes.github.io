@@ -3,7 +3,7 @@ layout: language
 type: language
 name: 'Erlang'
 iid: erlang
-status: DOING
+status: 
 abstract: ""
 links_:
  - link:

@@ -3,7 +3,7 @@ layout: language
 type: language
 iid: swift 
 name: 'Swift'
-status: DOING
+status: DONE
 icon: /resources/images/languages/Swift/swift-hero_2x.png
 kits:
  - InteractivePlaygrounds

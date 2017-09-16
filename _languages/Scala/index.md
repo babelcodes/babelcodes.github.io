@@ -3,7 +3,8 @@ layout: language
 type: language
 name: 'Scala'
 iid: scala
-status: DOING
+status:
+icon: /resources/images/languages/Scala/scala.png
 abstract: ""
 links_:
  - link:

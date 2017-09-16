@@ -3,7 +3,7 @@ layout: language
 type: language
 name: 'Java 7'
 iid: java7
-status: DOING
+status:
 abstract: ""
 links_:
  - link:
