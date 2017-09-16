@@ -1,0 +1,46 @@
+{% if include.language contains 'swift' %}
+	{% if include.withLink == 'yes' %}
+ 		{% for kit in site.kits %}
+			{% if kit.iid == 'swift' %}
+				<a href="{{kit.url}}">
+			{% endif %}
+		{% endfor %}
+	{% endif %}
+
+	<span class="label label-success">
+		{% if include.size != 'small' and include.withLink == 'yes' %}
+			<span class="glyphicon glyphicon-link" aria-hidden="true"></span>&nbsp;
+		{% endif %}
+	Swift</span>{% if include.withLink == 'yes' %}</a>{% endif %}
+{% endif %}
+
+
+
+{% if include.language contains 'objectivec' %}
+	{% if include.withLink == 'yes' %}
+		{% for kit in site.kits %}
+			{% if kit.iid == 'objectivec' %}
+				<a href="{{kit.url}}">
+			{% endif %}
+		{% endfor %}
+	{% endif %}
+
+	<span class="label label-warning">
+		{% if include.size == 'small' %}
+			Obj-C
+		{% else %}
+			{% if include.withLink == 'yes' %}<span class="glyphicon glyphicon-link" aria-hidden="true"></span>&nbsp;{% endif %}
+			Objective-C
+		{% endif %}
+	</span>
+
+	{% if include.withLink == 'yes' %}
+		</a>
+	{% endif %}
+{% endif %}
+
+{% for language in site.languages %}
+	{% if language.type=='language' and include.language contains language.iid %}
+		<a href="{{language.url}}">{{ language.name }}</a>
+	{% endif %}
+{% endfor %}

@@ -1,0 +1,32 @@
+#
+# Jekyll configuration
+#
+#exclude: ["vendor"]
+
+markdown: kramdown
+
+encoding: utf-8
+
+gems:      ["jekyll-gist"]
+
+collections:
+    typescript:
+            output: true
+            permalink: /:path/index:output_ext
+    languages:
+            output: true
+            permalink: /:path
+    functional:
+            output: true
+            permalink: /functional/:path/index:output_ext
+
+languageFeatures:
+- TypeSafety
+- TypeInference
+- Generics
+- Immutability
+- StatelessProgramming
+- PureFunction
+- FirstClassFunction
+- HigherOrderFunction
+- PatternMatching

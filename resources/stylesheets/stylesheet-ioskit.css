@@ -1,0 +1,52 @@
+/*******************************************************************************
+ioskit Custom CSS
+*******************************************************************************/
+
+@media (min-width: 1200px) {
+  .container {
+    width: 970px;
+  }
+}
+
+.apple {
+  /* 
+  display: block;
+  float: left;
+  */
+  width: 12px;
+  height: 14px;
+  background-size: 12px 14px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAoCAYAAACb3CikAAABP0lEQVRYw92XYRGEIBCFL4IRiEAEIhDBCDYgAhGMQAQiGIEINpCDmcVhPAQ8vYU5Z96/U79b971lX69/vrZtG5yE0+KkW0FMTquTBekWEHMEECRaVMImRDEhyAmE7uGT4FYDQEwCYmzRpDHA2gQCQDTIZ8fwq2AaoQfCy6QTLzSud5CK7gmQ9BsIcQimowxA0QhYZX6/O6kKCB66VDzwrsYeIIL4GYhChPB/mKQgGCKEPnUXYjVMDmJArEa2STkSxFqTGRggqgQikUBEzazoAgTLMbKXHll6AbHJNG2UqnNp2Nnmww5gMKeuP+ewHvpkt/PH3MnsJviWRgy2vIuQ3ZPfBJGrwnrIFFVzkpcI9iU9rBT8yoJFCwvW8xF/E8ZEa+XzEAcYnXj5lPrOcP5ViZ4QTy3kFBxFLtzDshaNrje7kZXfmM9gJwAAAABJRU5ErkJggg==);
+  /*background-image: url("/resources/images/apple-14x14.png");*/
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/*
+a .label {
+	color: white;
+}
+*/
+
+pre {
+  border-radius: 3px;
+}
+pre code {
+  font-size: 85%;
+}
+
+.status_list { margin-left: 20px; }
+.status_item { margin-right: 10px; }
+.status_label_item { margin-right: 7px; }
+.glyphicon.status_label_item { top: 3px; }
+
+.status_empty       { color: rgba(169, 169, 169, 0.3); }
+.status_empty_label { background-color: rgba(169, 169, 169, 0.3); }
+.status_todo     { color: darkgrey; }
+.status_todo_label  { background-color: darkgrey; }
+.status_doing    { color: hotpink; }
+.status_doing_label { background-color: hotpink; }
+.status_done     { color: greenyellow; }
+.label.status_done_label     { background-color: greenyellow; color:darkslategray; }
+.status_was_done { color: deepskyblue; }
+.status_was_done_label { background-color: deepskyblue; }

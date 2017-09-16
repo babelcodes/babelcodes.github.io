@@ -1,0 +1,103 @@
+---
+layout: default
+---
+
+<div class="bs-docs-section">
+
+	<div class="page-header">
+    	<div class="row">
+        	<div class="col-lg-12">
+				<h3 class="pull-right">
+					{% include label-status.html status=page.status %}
+				</h3>
+          		<h1 id="page-title">
+			      	{% if page.icon %}<img src="{{page.icon}}" width="100"/>&nbsp;{% endif %}
+					{% if page.deprecated %}<strike>{% endif %}
+					{{ page.name }}
+					{% if page.deprecated %}</strike>{% endif %}
+				</h1>
+        	</div>
+      	</div>
+    </div>
+
+ 	{% include deprecated.html deprecated=page.deprecated %}
+
+	<p>
+		<span class="label label-default" aria-hidden="true">
+			{% if page.type == 'technology' %}technology
+			{% else %}kit
+			{% endif %}
+		</span>
+		&nbsp;&nbsp;&bull;&nbsp;
+
+		<span data-toggle="tooltip" data-placement="top" data-original-title="Available since:">
+			{% include ios-link.html ios=page.since %}
+		</span>
+
+
+		{% if page.xcode %}
+			{% assign xcodes = site.xcodes | where: "iid", page.xcode %}
+			{% assign xcode = xcodes[0] %}
+
+		&nbsp;&bull;&nbsp;
+			{% if xcode %}
+				<a href="{{xcode.url}}"><span class="label
+						{% if page.xcode == "xcode6" %}label-primary
+					{% elsif page.xcode == "xcode5" %}label-success
+					{% elsif page.xcode == "xcode45" %}label-danger
+					{% elsif page.xcode == "xcode42" %}label-warning
+					{% else %}label-info
+					{% endif %}
+					">{{xcode.name}}</span></a>
+			{% else %}
+				{{ page.xcode }}
+			{% endif %}
+
+		{% endif %}
+
+		{% if page.link %}&nbsp;&bull;&nbsp;<a href="{{page.link}}" target="_blank">more</a>{% endif %}
+	</p>
+
+	<div class="row">
+        <div class="col-lg-12">
+			{{ content }}
+
+			<p>&nbsp;</p>
+
+			{% if page.iid == 'swift' or page.iid == 'objectivec' %}
+				<h3>Features</h3>
+				<ul class="list-unstyled status_list">
+					{% for f in site.features %}
+						{% if f.language contains page.iid %}
+							<li>
+								<small class="status_item">{% include mark-status.html status=f.status %}</small>
+								<a href="{{ f.url }}">{{ f.name }}</a>
+							</li>
+						{% endif %}
+					{% endfor %}
+				</ul>
+			{% endif %}
+
+			{% if page.detailedUpdates %}
+				<h3>Updates</h3>
+				<ul>
+					{% for u in page.detailedUpdates %}
+						<li>{% include ios-link.html ios=u.update.ios %}&nbsp;{{u.update.brief}}</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+
+			{% if page.kits %}
+				<h3>Kits</h3>
+				<ul>
+					{% for kit in page.kits %}
+					<li><a href="/{{ kit }}">{{ kit }}</a></li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+
+		  	{% include page-links.html %}
+
+		</div>
+	</div>
+</div>

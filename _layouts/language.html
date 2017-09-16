@@ -1,0 +1,51 @@
+---
+layout: default
+---
+
+
+<div class="bs-docs-section">
+
+	<div class="page-header">
+    	<div class="row">
+        	<div class="col-lg-12">
+				<h1 id="page-title">
+					{% include home-button.html %}
+					{% if page.icon %}<img src="{{page.icon}}" width="100"/>&nbsp;{% endif %}
+			      	{{ page.name }}
+				</h1>
+        	</div>
+      	</div>
+    </div>
+
+	<div class="row">
+        <div class="col-lg-12">
+			{{ content }}
+
+			<h3>Features</h3>
+			<!-- ul class="list-unstyled status_list">
+				{% for feature in site.languageFeatures %}
+					{% assign featureSupport = page.features[feature] %}
+					<li>
+						<small class="status_item">{% include mark-language-feature.html feature=featureSupport %}</small>
+						<a href="/functional/{{feature}}">{{feature}}</a>
+					</li>
+				{% endfor %}
+			</ul -->
+			<ul class="list-unstyled status_list">
+				{% for language in site.languages %}
+					{% capture count %}{{ count | plus: '1' }}{% endcapture %}
+					{% if language.language==page.iid %}
+					<li>
+						<span data-toggle="tooltip" data-placement="top" data-original-title="{{tooltip}}">
+							<a href="{{ language.url }}">{{ language.name }}</a>
+						</span>
+					</li>
+					{% endif %}
+				{% endfor %}
+			</ol>
+
+		</div>
+	</div>
+
+
+</div>

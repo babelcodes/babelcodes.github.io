@@ -1,0 +1,75 @@
+---
+layout: default
+---
+
+
+
+<div class="bs-docs-section">
+
+	<div class="page-header">
+    	<div class="row">
+        	<div class="col-lg-12">
+          		<h1 id="page-title">
+					{% include home-button.html %}
+					<small>{% include mark-status.html status=page.status %}&nbsp;</small>
+
+			      	{{ page.name }}
+
+					{% if page.code %}
+						<a class="btn btn-warning btn-lg pull-right" href="#CodeCard"
+						   title="View a full code snippet including the whole material seen on this page by clicking here..."
+						   style="background-color_: #e7452c; margin-right: 20px;"
+						>
+							<!-- img src="/resources/images/kits/Swift/swift-hero_2x.png" width="30px" / -->
+							<i class="glyphicon glyphicon-subtitles"></i>
+							&nbsp;
+							Code Card
+						</a>
+					{% endif %}
+				</h1>
+        	</div>
+      	</div>
+    </div>
+
+	<div class="row">
+        <div class="col-lg-12">
+			<h2 style="margin-bottom: 30px; margin-top: -10px;">{% include language.html language=page.language size="big" withLink="yes" %}</h2>
+			{{ content }}
+      	</div>
+    </div>
+
+	{% if page.code %}
+		<a name="CodeCard">&nbsp;</a>
+		<h1>
+			Code Card
+			{% include playground-link.html iswift=page.code.iswift %}
+		</h1>
+		<p><em>
+			Code Card is a full code snippet including the whole material seen on this page - hopefully as the most coherent way as possible.
+			As this snippet is embedded from 'gist' platform you need to have access to
+			<a href="http://gist.github.com" target="_blank">http://gist.github.com</a> to see it.
+		</em></p>
+		<p>See <a href="/CodeCards">the full list of available Code Cards</a>.</p>
+
+		{% gist page.code.gist %}
+
+	{% endif %}
+
+	{% if page.features %}
+		{% assign allFeatures = site.features %}
+
+		<h3>See also</h3>
+		<ul>
+			{% for feature in page.features %}
+				{% for f in allFeatures %}
+					{% if feature == f.iid %}
+						<li><a href="/{{ feature }}">{{f.name}}</a><sup>&nbsp;{% include language.html language=f.language size="big" %}</sup></li>
+					{% endif %}
+				{% endfor %}
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+  	{% include page-links.html %}
+
+</div>
