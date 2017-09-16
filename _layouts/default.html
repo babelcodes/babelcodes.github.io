@@ -61,20 +61,26 @@
                   -->
 
                   <!-- Languages -->
-                  <!--
                   <ul class="nav navbar-nav">
                       <li class="dropdown">
                           <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="languages">Languages <span class="caret"></span></a>
                           <ul class="dropdown-menu" aria-labelledby="languages">
-                              <li><a href="/features">Features</a></li>
-                              <li><a href="/CodeCards">Code Cards</a></li>
-                              <li><a href="/languages">Functional</a></li>
-                              <li><a href="/Swift">Swift</a></li>
-                              <li><a href="/ObjectiveC">Objective C</a></li>
+                              <!--
+                                  <li><a href="/features">Features</a></li>
+                                  <li><a href="/CodeCards">Code Cards</a></li>
+                                  <li><a href="/languages">Functional</a></li>
+                                  <li><a href="/Swift">Swift</a></li>
+                                  <li><a href="/ObjectiveC">Objective C</a></li>
+                              -->
+                              {% for language in site.languages %}
+                                  {% if language.type=='language' %}
+                                    <li><a href="{{language.url}}">{% include mark-status.html status=language.status %}&nbsp;&nbsp;{{language.name}}</a></li>
+                                  {% endif %}
+                              {% endfor %}
+
                           </ul>
                       </li>
                   </ul>
-                  -->
 
                   <!-- iOS -->
                   <!--
