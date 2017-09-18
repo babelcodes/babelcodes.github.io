@@ -3,7 +3,7 @@ layout: feature
 language: typescript
 name: 'Class'
 iid: Class
-status: DOING
+status: DONE
 abstract: ""
 code:
   gist: a084aead5a3acb71c8340b7b6c7ba86e 

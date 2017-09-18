@@ -50,3 +50,5 @@ applications for client-side or server-side (Node.js) execution.
 __<u>As TypeScript is a superset of JavaScript, existing JavaScript programs are also valid TypeScript programs</u>__.
 
 -- [wikipedia](https://en.wikipedia.org/wiki/TypeScript)
+
+One of TypeScript’s core principles is that type-checking focuses on the shape that values have. This is sometimes called “duck typing” or “structural subtyping”.

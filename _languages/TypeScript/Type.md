@@ -26,6 +26,8 @@ features:
 * TOC
 {:toc}
 
+One of TypeScript’s core principles is that type-checking focuses on the shape that values have. This is sometimes called “duck typing” or “structural subtyping”.
+
 ## Basic types
 
 {% gist d9d2a3325e50589004867c5bd23d68f6 %}
