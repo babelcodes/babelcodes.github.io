@@ -8,7 +8,7 @@ abstract: ""
 code:
   gist: 54e9f8c7a70fd381b327cc15b3855e5a 
 links:
- - link_:
+ - link:
     name: 'TypeScriptLang.org | Interfaces'
     url: https://www.typescriptlang.org/docs/handbook/interfaces.html
     description: ''
