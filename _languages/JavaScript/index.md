@@ -2,7 +2,7 @@
 layout: language
 type: language
 name: 'JavaScript'
-iid: js
+iid: javascript
 status:
 abstract: ""
 links_:

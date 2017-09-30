@@ -2,6 +2,15 @@
 
 Tower of Programming Languages
 
+## Development
+
+## Add new Feature
+
+- Ensure it is present in the `/_config.yml/allFeatures` property (aka the reference list for the homepage)
+- By default, the features of the list are mark as `unknown`
+  - If a file `Language/Property.md` exists the property is `Supported`
+  - To say that it is not the case for this language, copy the `JavaScript/Generics.md` file for your property 
+
 ## Setup
 
 ### Jekyll

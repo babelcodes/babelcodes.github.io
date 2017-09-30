@@ -30,3 +30,35 @@ languageFeatures:
 - FirstClassFunction
 - HigherOrderFunction
 - PatternMatching
+
+allFeatures:
+- Access Control
+- Arguments
+- Array
+- Block
+- Class
+- Class Method
+- Closure
+- Constant
+- Date
+- Enumeration
+- Error Handling
+- Extension
+- For
+- Function
+- Interface
+- Generics
+- Operator Function
+- Optional
+- Properties
+- Protocol
+- Range
+- Structure
+- Subscripts
+- Switch
+- this
+- Tuple
+- Type
+- Type Method
+- Variable
+- While
