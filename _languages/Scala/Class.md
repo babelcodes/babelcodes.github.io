@@ -2,7 +2,7 @@
 layout: feature
 name: 'Class'
 iid: Class
-status: DONE
+status: DOING
 language: scala
 abstract: ""
 code_:
@@ -31,6 +31,8 @@ features_:
 * TOC
 {:toc}
 
+## Introduction
+
 Scala is a pure object-oriented language. Conceptually, every value is an object and every operation is a method call.
 
 <pre><code>// src/main/scala/Recipe.scala
@@ -55,4 +57,29 @@ println(r.cookTime)     // outputs 0
 r.cookTime = 2
 println(r.cookTime)     // outputs 2
 println(r.calories)     // This will produce an error - value calories is not a member of recipe
+</code></pre>
+
+
+Promote constructor parameters with prefix `val` or `var`:
+
+<pre><code>// src/main/scala/Recipe.scala
+class Recipe(val calories: Int) {
+  ...
+}
+
+val r = new Recipe(100)
+println(r.calories)     // Now that works!
+</code></pre>
+
+
+## Methods
+
+Method definitions in Scala start with the keyword `def` followed by the name of the method and its parameters. 
+
+The return type of the method can be [inferred](/functional/TypeInference), just like with [Variables](Variable), when not explicitly declared.
+
+<pre><code>
+def estimatedEffort(servings:Int): Int = {
+println("estimating the effort...")
+servings * cookTime * calories }
 </code></pre>
