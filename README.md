@@ -71,6 +71,12 @@ gem install psych -v 2.0.5
 - https://pages.github.com/versions/
 
 
+## Run locally
+
+```
+jekyll serve
+```
+
 ## Add new iOS version
 
 * Replace current version in `/_config.xml#currentVersions`
