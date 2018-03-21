@@ -26,7 +26,7 @@ features:
 
 ## Main topics
 
-* [Constants](/Constant), [Variables](/Variable) and [Optionals](/Optional)
+* [Constants](/Constant) / [Immutability](/functional/immutability) and [Variables](/Variable)
 
 Scala is fully expression-oriented:
 
