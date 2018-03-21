@@ -21,6 +21,7 @@ layout: default
 		<div class="col-lg-12">
 			<h4 style="margin-bottom: 30px; margin-top: -10px;">
 				{% include mark-status.html status=page.status %}
+				&nbsp;&bull;&nbsp;<a href="#functional">Functional Programming</a>
 				&nbsp;&bull;&nbsp;<a href="#features">Features</a>
 				&nbsp;&bull;&nbsp;<a href="#blueprints">Blueprints</a>
 			</h4>
@@ -33,7 +34,29 @@ layout: default
 		</div>
 	</div>
 
-	<a name="features"></a>
+	<a name="functional"></a><p>&nbsp;</p>
+	<div class="row">
+		<div class="col-lg-12">
+			<h3>
+				Functional Programming
+				<a class="pull-right" href="#top" title="Go to the top"><span class="glyphicon glyphicon-triangle-top"></span></a>
+			</h3>
+			<ol>
+				{% for f in site.languageFeatures %}
+					{% assign feature = page.features[f] %}
+					{% if feature == true %}
+						{% for functional in site.functional %}
+							{% if functional.iid == f %}
+								<li><a href="{{ functional.url }}">{{ functional.name }}</a></li>
+							{% endif %}
+						{% endfor %}
+					{% endif %}
+				{% endfor %}
+			</ol>
+		</div>
+	</div>
+
+	<a name="features"></a><p>&nbsp;</p>
 	<div class="row">
 		<div class="col-lg-12">
 			<h3>
@@ -47,7 +70,6 @@ layout: default
 					{% endif %}
 				{% endfor %}
 			</ol>
-
 		</div>
 	</div>
 
