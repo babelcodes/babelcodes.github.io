@@ -78,8 +78,76 @@ Method definitions in Scala start with the keyword `def` followed by the name of
 
 The return type of the method can be [inferred](/functional/TypeInference), just like with [Variables](Variable), when not explicitly declared.
 
-<pre><code>
-def estimatedEffort(servings:Int): Int = {
-println("estimating the effort...")
-servings * cookTime * calories }
+<pre><code>def estimatedEffort(servings:Int): Int = {
+  println("estimating the effort...")
+  servings * cookTime * calories 
+}
 </code></pre>
+
+
+## Inheritance
+
+We can create subclasses by extending abstract or non-final classes.
+
+One difference is the constructor parameters of the class being extended need to be passed in as well.
+
+<pre><code>class Food(calories: Int)
+class Salad(val lettuceCalories: Int, val dressingCalories: Int)
+extends Food(lettuceCalories + dressingCalories)
+</code></pre>
+
+When extending a class we can also override members of parent classes:
+
+<pre><code>// Example of Overriding Methods 
+class Menu(items: List[Food]) {
+  def numberOfMenuItems() = items.size 
+}
+
+// Dinners only consists of Salads
+class Dinner(items: List[Salad]) extends Menu(items) {
+  // Overriding def as val
+  override def numberOfMenuItems = 2 * items.size 
+}
+
+val s1 = new Salad(5, 5)
+val s2 = new Salad(15, 15)
+val dinner = new Dinner(List(s1, s2))
+
+// prints 4
+println(s"Number Of Menu Items = ${dinner.numberOfMenuItems}")
+</code></pre>
+
+
+## Companion objects with apply
+
+Scala does not have a `static` keyword like Java to mark a definition as a static (singleton) instance. Instead it uses 
+the `object` keyword to declare a singleton object.
+
+For example the `App` main class is an `object`:
+
+<pre><code>// src/main/scala/Hello.scala
+object Hello extends App { 
+  println("Hello, World!")
+}
+</code></pre>
+
+Objects are commonly used:
+- for declaring constants
+- to hold factory methods for creating classes
+
+This last pattern is so common that Scala declares a special method definition for this, called `apply()`. It can be thought
+of like a default factory method that allows the object to be called like a method:
+
+<pre><code>// src/main/scala/Recipe.scala
+object Recipe {
+  def apply(calories :Int) = new Recipe(2 * calories)
+}
+
+val r1 = Recipe.apply(100) // This call refers to the Recipe object
+val r2 = Recipe(200)       // apply method is called by default
+println(r2.calories)       // outputs 400
+</code></pre>
+
+An object is considered a __companion object__ when it is declared in the same file as the class and shares the name and 
+the package. Companion objects are used to hold the static definitions related to class but do not have any special relationship 
+to a class.

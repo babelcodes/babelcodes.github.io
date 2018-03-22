@@ -19,7 +19,7 @@ Version 3.5.* bug!
 
 ```
 gem uninstall jekyll
-gem install jekyll -v 3.4-5
+gem install jekyll -v 3.4.5
 ```
 
 * Broken Links checkers
