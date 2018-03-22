@@ -19,6 +19,7 @@ features:
   PureFunction: true
   FirstClassFunction: '?'
   PatternMatching: true
+  HigherOrderFunction: true
 ---
 
 * TOC
@@ -38,6 +39,7 @@ written in Scala can be called from [Java](/Java/7).
 
 * [Constants](/Constant) / [Immutability](/functional/immutability) and [Variables](/Variable)
 * [Classes](Class) and [Traits](Trait)
+* Higher Order [functions](Function)
 
 Scala is fully expression-oriented:
 
