@@ -31,18 +31,18 @@ features:
 Scala is fully expression-oriented:
 
 <pre><code>val second = { 
-              val tmp = 2 * 5
-              tmp + 88
-           }
+  val tmp = 2 * 5
+  tmp + 88
+}
 </code></pre>
 
 or:
 
 <pre><code>val second = 43
 val displayFlag = if (second % 2 == 0) {
-"Second is Even" }
+  "Second is Even" }
 else {
-"Second is Odd"
+  "Second is Odd"
 }
 </code></pre>
 
