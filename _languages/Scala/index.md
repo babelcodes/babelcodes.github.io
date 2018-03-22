@@ -24,6 +24,16 @@ features:
 * TOC
 {:toc}
 
+## What is it?
+
+Scala is a general-purpose programming language designed to express common programming patterns in a concise, elegant, and 
+[type-safe way](/functional/TypeSafety). It smoothly integrates features of object-oriented and functional programming languages, 
+enabling programmers to be more productive. Scala is an acronym for “Scalable Language”. This means that Scala grows with you.
+
+An important aspect of Scala is that it runs inside the JVM. That means it can leverage existing Java Libraries and libraries 
+written in Scala can be called from [Java](/Java/7).
+
+
 ## Main topics
 
 * [Constants](/Constant) / [Immutability](/functional/immutability) and [Variables](/Variable)
