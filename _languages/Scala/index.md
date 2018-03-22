@@ -17,9 +17,9 @@ features:
   TypeInference: true
   Immutability: true
   PureFunction: true
-  FirstClassFunction: '?'
-  PatternMatching: true
+  FirstClassFunction: true
   HigherOrderFunction: true
+  PatternMatching: true
 ---
 
 * TOC

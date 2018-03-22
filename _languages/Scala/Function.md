@@ -29,6 +29,10 @@ Functions:
 Functions are usually declared as an argument to another method, like what action should be taken when a service is called 
 or a link is clicked on.
 
+## First Class function
+
+[First Class function](/functional/FirstClassFunction) can be stored, passed, and returned
+
 For example, to define a function with a `Int` parameter named `foo` (what comes after `=>` is the body of the function):
 
 ```
