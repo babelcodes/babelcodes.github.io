@@ -168,7 +168,7 @@ When you declare a class as a case class, the Scala compiler automatically gener
 - a copy constructor
 - a companion object and the default apply factory method is created
 - an accessor for each attribute
-- __Pattern matching on the class is made possible__
+- [Pattern Matching](/functional/PatternMatching) on the class is made possible
 
 ```
    case class Person(name: String, age: Int)
