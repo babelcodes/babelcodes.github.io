@@ -57,6 +57,7 @@ allFeatures:
 - Subscripts
 - Switch
 - this
+- Trait
 - Tuple
 - Type
 - Type Method

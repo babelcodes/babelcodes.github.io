@@ -37,6 +37,7 @@ written in Scala can be called from [Java](/Java/7).
 ## Main topics
 
 * [Constants](/Constant) / [Immutability](/functional/immutability) and [Variables](/Variable)
+* [Classes](Class) and [Traits](Trait)
 
 Scala is fully expression-oriented:
 
