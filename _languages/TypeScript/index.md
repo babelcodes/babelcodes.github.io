@@ -27,10 +27,10 @@ links:
      description: ' - Ray Wenderlich'
 abstract: "An innovative new programming language for Cocoa and Cocoa Touch."
 features:
-  TypeSafety: 
-  TypeInference: 
+  TypeSafety: true
+  TypeInference: true
   Generics: true
-  Immutability: 
+  Immutability: true
   StatelessProgramming: 
   PureFunction: 
   FirstClassFunction: 
