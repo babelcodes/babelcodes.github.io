@@ -58,7 +58,7 @@ layout: default-headed
                         <td>
                             {% include mark-status.html status=language.status %}
                         </td>
-                        <td><big><a href="{{language.url}}" style="color: #df691a; text-decoration: none;">{{ language.name }}</a></big></td>
+                        <th><big><a href="{{language.url}}" style="color: #df691a; text-decoration: none;">{{ language.name }}</a></big></th>
                         {% for f in site.languageFeatures %}
                             {% assign feature = language.features[f] %}
                             <td>
