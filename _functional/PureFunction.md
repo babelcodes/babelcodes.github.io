@@ -40,7 +40,7 @@ class Cafe {
 }
 ``` 
 
-can be refactored as follow (adding a payments object and returning it):
+can be refactored as follow (creating a `Charge` object and returning it):
 
 ```
 class Cafe {
@@ -49,6 +49,8 @@ class Cafe {
     (cup, Charge(cc, cup.price))
 }
 ```
+
+A `Charge` is a data type we just invented containing a `CreditCard` and an amount.
 
 
 ## Advanced
