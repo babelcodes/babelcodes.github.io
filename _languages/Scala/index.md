@@ -37,7 +37,7 @@ written in Scala can be called from [Java](/Java/7).
 
 ## Main topics
 
-* [Constants](/Constant) / [Immutability](/functional/immutability) and [Variables](/Variable)
+* [Constants](Constant) / [Immutability](/functional/immutability) and [Variables](Variable), the [Unit type](Unit)
 * [Classes](Class) and [Traits](Trait)
 * Higher Order [functions](Function)
 * [Collections](Collections)

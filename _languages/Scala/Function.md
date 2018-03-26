@@ -15,6 +15,7 @@ links_:
     type: reference
 features:
  - Class
+ - TypeUnit
 ---
 
 * TOC

@@ -62,5 +62,6 @@ allFeatures:
 - Tuple
 - Type
 - Type Method
+- TypeUnit
 - Variable
 - While

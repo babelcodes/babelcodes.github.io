@@ -13,6 +13,7 @@ _links:
     type: reference
 features:
  - Constant
+ - TypeUnit
 ---
 
 Use `var` to make a variable.
