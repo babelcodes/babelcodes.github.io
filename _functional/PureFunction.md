@@ -53,10 +53,64 @@ class Cafe {
 A `Charge` is a data type we just invented containing a `CreditCard` and an amount.
 
 
-## Advanced
+## Referential transparency
 
-This property of pure functions is called referential transparency and makes it possible to conduct equational reasoning 
-on the code.
+A function has no observable effect on the execution of the program other than to compute a result given its inputs; we 
+say that it has no __side effects__. We sometimes qualify such functions as pure functions to make this more explicit, 
+but this is somewhat redundant. Unless we state otherwise, we’ll often use function to imply no side effects.
+
+We can formalize this idea of pure functions using the concept of __referential transparency__ (RT). This is a property 
+of expressions in general and not just functions. 
+
+For the purposes of our discussion, consider an expression to be any part of a program that can be evaluated to a result—anything 
+that you could type into the Scala interpreter and get an answer. For example, 2 + 3 is an expression that applies the pure 
+function + to the values 2 and 3 (which are also expressions). This has no side effect. The evaluation of this expression 
+results in the same value 5 every time. In fact, if we saw 2 + 3 in a program we could simply replace it with the value 5 
+and it wouldn’t change a thing about the meaning of our program.
+
+This is all it means for an expression to be referentially transparent—in any program, the expression can be replaced by 
+its result without changing the meaning of the program. And we say that a function is pure if calling it with RT arguments 
+is also RT.
+
+### Referential transparency and purity
+
+> An expression `e` is __referentially transparent__ if, for all programs `p`, all occurrences of `e` in `p` can be replaced 
+> by the result of evaluating `e` without affecting the meaning of `p`. 
+>
+> A function `f` is __pure__ if the expression `f(x)` is referentially transparent for all referentially transparent `x`.
+
+
+### Substitution model & Equational reasoning
+
+This property of pure functions is called referential transparency and makes it possible to conduct __equational reasoning__ 
+on the code (computation proceeds by substituting equals for equals).
+
+_Referential transparency_ forces the invariant that everything a function does is represented by the value that it returns, 
+according to the result type of the function. This constraint enables a simple and natural mode of reasoning about program 
+evaluation called the __substitution model__. When expressions are referentially transparent, we can imagine that computation 
+proceeds much like we’d solve an algebraic equation. We fully expand every part of an expression, replacing all variables 
+with their referents, and then reduce it to its simplest form. 
+
+At each step we replace a term with an equivalent one; computation proceeds by substituting equals for equals. In other 
+words, RT enables equational reasoning about programs.
+
+The _substitution model_ is simple to reason about since effects of evaluation are purely local (they affect only the 
+expression being evaluated) and we need not mentally simulate sequences of state updates to understand a block of code. 
+Understanding requires only local reasoning.
+
+## Why?
+
+Formalizing the notion of _purity_ this way gives insight into why functional programs are often more modular. Modular 
+programs consist of components that can be understood and reused independently of the whole, such that the meaning of 
+the whole depends only on the meaning of the components and the rules governing their composition; that is, they are 
+composable.
+
+A pure function is modular and composable because it separates:
+* the logic of the computation itself 
+* from “what to do with the result / output”  (simply computed and returned)
+* and “how to obtain the input” (obtained in exactly one way: via the argument(s) to the function)
+
+It’s a black box.
 
 Pure functions can be executed on different threads or cores without any mechanisms to handle multithreading and multiprocessing. 
 This is a very important benefit of functional programming over OOP as multicore programming mechanisms are very complex 

@@ -32,7 +32,7 @@ features:
   Generics: true
   Immutability: true
   StatelessProgramming: 
-  PureFunction: 
+  PureFunction: true
   FirstClassFunction: 
   HigherOrderFunction: 
   PatternMatching: 
