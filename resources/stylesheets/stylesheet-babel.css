@@ -8,8 +8,14 @@ Babel Custom CSS
   }
 }
 
+/* HOME */
+
 .b-home-icon {
   font-size: 2em;
+}
+
+.home td {
+  text-align: center;
 }
 
 .b-a {

@@ -1,0 +1,19 @@
+<thead>
+	<tr style="background-color: rgba(0, 0, 0, 0);">
+		<th colspan="{{ languageCount | plus: '2' }}" style="padding-left: 0px;">
+			<h2 style="margin-top: 30px; margin-bottom: 5px;">{{ include.title }}</h2>
+		</th>
+	</tr>
+	<tr>
+		<th colspan="2"></th>
+		{% for language in site.languages %}
+			{% if language.type=='language' and language.status!='HIDDEN' %}
+				<th>
+					{% include mark-status.html status=language.status %}&nbsp;
+					<a href="{{language.url}}" style="color: #df691a; text-decoration: none;">{{ language.name }}</a>
+				</th>
+			{% endif %}
+		{% endfor %}
+	</tr>
+</thead>
+å
