@@ -2,7 +2,7 @@
 layout: language
 name: 'Template'
 iid: Template
-status: DOING
+status: DOING | HIDDEN
 abstract: ""
 links_:
  - link:

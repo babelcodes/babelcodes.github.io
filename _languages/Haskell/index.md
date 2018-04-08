@@ -3,7 +3,7 @@ layout: language
 type: language
 name: 'Haskell'
 iid: haskell
-status: 
+status: HIDDEN
 abstract: ""
 links_:
  - link:

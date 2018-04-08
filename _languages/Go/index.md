@@ -3,7 +3,7 @@ layout: language
 type: language
 name: 'Go'
 iid: go
-status:
+status: HIDDEN
 abstract: ""
 links_:
  - link:
