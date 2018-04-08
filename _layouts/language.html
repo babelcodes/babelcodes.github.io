@@ -21,6 +21,7 @@ layout: default
 		<div class="col-lg-12">
 			<h4 style="margin-bottom: 30px; margin-top: -10px;">
 				{% include mark-status.html status=page.status %}
+				&nbsp;&bull;&nbsp;<a href="#oop">Object Oriented Programming</a>
 				&nbsp;&bull;&nbsp;<a href="#functional">Functional Programming</a>
 				&nbsp;&bull;&nbsp;<a href="#features">Features</a>
 				&nbsp;&bull;&nbsp;<a href="#blueprints">Blueprints</a>
@@ -31,6 +32,28 @@ layout: default
 	<div class="row">
         <div class="col-lg-12">
 			{{ content }}
+		</div>
+	</div>
+
+	<a name="oop"></a><p>&nbsp;</p>
+	<div class="row">
+		<div class="col-lg-12">
+			<h3>
+				Object Oriented Programming
+				<a class="pull-right" href="#top" title="Go to the top"><span class="glyphicon glyphicon-triangle-top"></span></a>
+			</h3>
+			<ol>
+				{% for f in site.oopFeatures %}
+					{% assign feature = page.oopFeatures[f] %}
+					{% if feature == true %}
+						{% for oopPage in site.oop %}
+							{% if oopPage.iid == f %}
+								<li><a href="{{ oopPage.url }}">{{ oopPage.name }}</a></li>
+							{% endif %}
+						{% endfor %}
+					{% endif %}
+				{% endfor %}
+			</ol>
 		</div>
 	</div>
 
