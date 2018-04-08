@@ -35,7 +35,9 @@ features:
   PureFunction: true
   FirstClassFunction: 
   HigherOrderFunction: 
-  PatternMatching: 
+  PatternMatching:
+oopFeatures:
+  Class: true 
 ---
 
 * TOC

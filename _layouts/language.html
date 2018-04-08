@@ -42,7 +42,7 @@ layout: default
 				<a class="pull-right" href="#top" title="Go to the top"><span class="glyphicon glyphicon-triangle-top"></span></a>
 			</h3>
 			<ol>
-				{% for f in site.languageFeatures %}
+				{% for f in site.functionalFeatures %}
 					{% assign feature = page.features[f] %}
 					{% if feature == true %}
 						{% for functional in site.functional %}

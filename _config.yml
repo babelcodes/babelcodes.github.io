@@ -16,11 +16,17 @@ collections:
     languages:
             output: true
             permalink: /:path
+    oop:
+            output: true
+            permalink: /oop/:path/index:output_ext
     functional:
             output: true
             permalink: /functional/:path/index:output_ext
 
-languageFeatures:
+oopFeatures:
+- Class
+
+functionalFeatures:
 - TypeSafety
 - TypeInference
 - Generics

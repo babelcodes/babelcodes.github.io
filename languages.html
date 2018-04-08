@@ -15,7 +15,7 @@ layout: default-headed
 			<tr>
 				<th>#</th>
 				<th>Name</th>
-				{% for feature in site.languageFeatures %}
+				{% for feature in site.functionalFeatures %}
 					{% for functional in site.functional %}
 						{% if functional.iid == feature %}
 							<th>
@@ -35,7 +35,7 @@ layout: default-headed
 				<tr>
 					<th>{{ count }}</th>
 					<td><a href="{{language.url}}">{{ language.name }}</a></td>
-					{% for f in site.languageFeatures %}
+					{% for f in site.functionalFeatures %}
 						{% assign feature = language.features[f] %}
 						<td>
 							{% include mark-language-feature.html feature=feature %}
